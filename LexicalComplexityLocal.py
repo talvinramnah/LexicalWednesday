@@ -61,7 +61,7 @@ user_url = st.text_input("Article URL:")
 if st.button("Analyze"):
     article_text = extract_text_from_url(user_url)
     if article_text:
-        lexical_complexity_score, cefr_score = analyze_text_with_openai(article_text, OPENAI_API_KEY)
+        lexical_complexity_score, cefr_score = analyze_text_with_openai(article_text)
         # Removed the isdigit() check for cefr_score as it's now a string like "A1", "B2", etc.
         if lexical_complexity_score.isdigit():
             article_title = BeautifulSoup(requests.get(user_url).content, 'html.parser').title.string
