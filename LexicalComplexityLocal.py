@@ -23,8 +23,7 @@ def extract_text_from_url(url):
         print(f"An error occurred: {e}")
         return None
 #openAI API key
-st.write("OPENAI_API_KEY", st.secrets["OPENAI_API_KEY"])
-
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 # Function to analyze CEFR level and lexical complexity using OpenAI
 def analyze_text_with_openai(text, openai_api_key):
     try:
