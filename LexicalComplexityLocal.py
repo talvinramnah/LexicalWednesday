@@ -25,9 +25,9 @@ def extract_text_from_url(url):
 #openAI API key
 os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 # Function to analyze CEFR level and lexical complexity using OpenAI
-def analyze_text_with_openai(text, openai_api_key):
+def analyze_text_with_openai(text, OPENAI_API_KEY):
     try:
-        openai.api_key = openai_api_key
+        openai.api_key = OPENAI_API_KEY
         # Request for lexical complexity score
         prompt_lexical = f"Provide a lexical complexity score on a scale from 0 to 100 for the following text:\n{text}"
         response_lexical = openai.Completion.create(
