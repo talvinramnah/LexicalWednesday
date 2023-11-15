@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 secrets.toml
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "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"
